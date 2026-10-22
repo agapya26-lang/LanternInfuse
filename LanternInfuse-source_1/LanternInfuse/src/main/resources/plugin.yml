@@ -1,0 +1,35 @@
+name: LanternInfuse
+version: 1.0.0
+main: net.lanternlight.infuse.LanternInfuse
+api-version: '26.1.2'
+authors: [LanternLight+]
+description: Custom Infuse-style effects for the LanternLight+ team
+commands:
+  infuse:
+    description: Admin command for LanternInfuse
+    aliases: [li]
+  lspark:
+    description: Activate your primary effect's spark
+  rspark:
+    description: Activate your support effect's spark
+  ldrain:
+    description: Drain your primary effect back into an item
+  rdrain:
+    description: Drain your support effect back into an item
+  controls:
+    description: Switch between offhand-key and command controls
+  trust:
+    description: Trust a player so your abilities never hit them
+    usage: /trust <player>
+  untrust:
+    description: Remove a trusted player
+    usage: /untrust <player>
+  infuses:
+    description: See what every effect does and how to craft it
+    usage: /infuses [effect]
+  recipes:
+    description: Browse every effect and its crafting recipe
+permissions:
+  lanterninfuse.admin:
+    description: Use /infuse admin commands
+    default: op

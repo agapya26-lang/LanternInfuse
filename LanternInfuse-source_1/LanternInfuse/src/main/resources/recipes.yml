@@ -1,0 +1,53 @@
+# Crafting recipes for each effect (3x3 shaped recipes).
+# Use any Bukkit Material name. A space in a shape row means "empty slot".
+recipes:
+
+  # ---- Primaries ----
+  strength:
+    shape: ["WSW", "NLN", "WSW"]
+    ingredients: {W: NETHER_WART, S: WITHER_SKELETON_SKULL, N: NETHERITE_SWORD, L: LODESTONE}
+
+  thunder:
+    shape: ["LSL", "TCT", "LSL"]
+    ingredients: {L: LIGHTNING_ROD, S: SILENCE_ARMOR_TRIM_SMITHING_TEMPLATE, T: TRIDENT, C: CREEPER_HEAD}
+
+  haste:
+    shape: ["DND", "GBG", "DAD"]
+    ingredients: {D: DIAMOND_BLOCK, N: NETHERITE_PICKAXE, G: GOLD_BLOCK, B: BEACON, A: DUNE_ARMOR_TRIM_SMITHING_TEMPLATE}
+
+  frost:
+    shape: ["IPI", "TCT", "IPI"]
+    ingredients: {I: BLUE_ICE, P: POWDER_SNOW_BUCKET, T: TIDE_ARMOR_TRIM_SMITHING_TEMPLATE, C: CONDUIT}
+
+  heart:
+    shape: ["TDT", "DED", "TDT"]
+    ingredients: {T: TOTEM_OF_UNDYING, D: DIAMOND_BLOCK, E: ENCHANTED_GOLDEN_APPLE}
+
+  regen:
+    shape: ["GHT", "SCS", "THG"]
+    ingredients: {G: GOLDEN_APPLE, H: HONEY_BOTTLE, S: SUSPICIOUS_STEW, C: CAKE, T: TOTEM_OF_UNDYING}
+
+  feather:
+    shape: ["FGF", "VTV", "FGF"]
+    ingredients: {F: FEATHER, G: GOAT_HORN, V: VEX_ARMOR_TRIM_SMITHING_TEMPLATE, T: TRIDENT}
+
+  invis:
+    shape: ["ESE", "SRS", "ESE"]
+    ingredients: {E: ENDER_EYE, S: SCULK_SHRIEKER, R: RECOVERY_COMPASS}
+
+  # ---- Supports ----
+  emerald:
+    shape: ["EBE", "BCB", "EBE"]
+    ingredients: {E: EMERALD_BLOCK, B: BELL, C: END_CRYSTAL}
+
+  speed:
+    shape: ["SAS", "ARA", "SAS"]
+    ingredients: {S: SUGAR, A: AMETHYST_SHARD, R: RABBIT_FOOT}
+
+  fire:
+    shape: ["MFM", "FCF", "MFM"]
+    ingredients: {M: MAGMA_CREAM, F: FIRE_CHARGE, C: CRYING_OBSIDIAN}
+
+  ocean:
+    shape: ["PSP", "SHS", "PSP"]
+    ingredients: {P: PRISMARINE_SHARD, S: SEA_LANTERN, H: HEART_OF_THE_SEA}
