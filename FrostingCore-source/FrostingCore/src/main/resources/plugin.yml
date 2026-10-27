@@ -1,0 +1,131 @@
+name: FrostingCore
+version: 1.0.0
+main: net.frosting.core.FrostingCore
+api-version: '26.1.2'
+authors: [Frosting SMP team]
+description: Economy, spawn, RTP, auction, shop, crates, orders and the FrostGuard anti-cheat for Frosting SMP
+commands:
+  bal:
+    description: Check your balance
+    aliases: [balance, money]
+  pay:
+    description: Pay another player
+  baltop:
+    description: Richest players
+  top:
+    description: Leaderboards (money, shards, kills, deaths, playtime)
+  shards:
+    description: Check your shards
+  stats:
+    description: Show player stats
+  spawn:
+    description: Teleport to spawn
+  setspawn:
+    description: Set the spawn (admin)
+  rtp:
+    description: Random teleport
+  sethome:
+    description: Set a home
+  home:
+    description: Teleport to a home
+  delhome:
+    description: Delete a home
+  homes:
+    description: Open your homes menu
+  tpa:
+    description: Request to teleport to a player
+  tpahere:
+    description: Request a player to teleport to you
+  tpaccept:
+    description: Accept a teleport request
+  tpdeny:
+    description: Deny a teleport request
+  sb:
+    description: Toggle the scoreboard
+  afk:
+    description: Go to the AFK zone
+  setafk:
+    description: Set the AFK zone (admin)
+  sell:
+    description: Sell items
+  worth:
+    description: See what the item in your hand sells for
+  ah:
+    description: Auction house
+    aliases: [auction]
+  daily:
+    description: Claim your daily reward
+  fg:
+    description: FrostGuard anti-cheat staff commands
+    aliases: [guard, ac]
+  shop:
+    description: Buy items from the server
+  crates:
+    description: Open crates
+    aliases: [crate]
+  keys:
+    description: See your crate keys
+  shardshop:
+    description: Spend your shards
+    aliases: [sshop]
+  bounty:
+    description: Place or view bounties
+  orders:
+    description: Buy orders (request items, get paid by others)
+    aliases: [order]
+  lottery:
+    description: Buy lottery tickets
+    aliases: [lotto]
+  airdrop:
+    description: Where is the Frosting Drop?
+    aliases: [drop]
+  nv:
+    description: Toggle night vision
+  hidechat:
+    description: Hide other players' chat
+  discord:
+    description: Get the Discord invite
+    aliases: [dc]
+  frostingcore:
+    description: Admin command for FrostingCore
+    aliases: [fc]
+permissions:
+  frostingcore.admin:
+    description: Admin commands
+    default: op
+  frostingcore.guard:
+    description: See anti-cheat alerts and use /fg
+    default: op
+  frostingcore.guard.bypass:
+    description: Never checked by the anti-cheat
+    default: op
+  frostingcore.bypass.spawn:
+    description: Build / fight inside spawn protection
+    default: op
+  frostingcore.bypass.combat:
+    description: Ignore the combat timer
+    default: op
+  frostingcore.bypass.teleport:
+    description: No teleport countdown
+    default: op
+  frostingcore.bypass.cooldown:
+    description: No /rtp cooldown
+    default: op
+  frostingcore.rank.owner:
+    description: Shows the OWNER prefix in the tab list
+    default: false
+  frostingcore.rank.admin:
+    description: Shows the ADMIN prefix in the tab list
+    default: false
+  frostingcore.rank.mod:
+    description: Shows the MOD prefix in the tab list
+    default: false
+  frostingcore.rank.helper:
+    description: Shows the HELPER prefix in the tab list
+    default: false
+  frostingcore.rank.vip:
+    description: Shows the VIP prefix in the tab list
+    default: false
+  frostingcore.bypass.ahlimit:
+    description: No auction listing limit
+    default: op

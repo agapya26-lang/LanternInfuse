@@ -1,0 +1,128 @@
+# The shop players asked to get back. price = what it costs to BUY one. Edit freely, then /fc reload.
+categories:
+  blocks:
+    name: "&dBlocks"
+    icon: GRASS_BLOCK
+    items:
+      COBBLESTONE: 8
+      STONE: 12
+      DIRT: 4
+      SAND: 8
+      GRAVEL: 8
+      OAK_LOG: 24
+      SPRUCE_LOG: 24
+      BIRCH_LOG: 24
+      DARK_OAK_LOG: 24
+      OAK_PLANKS: 6
+      GLASS: 16
+      BRICKS: 40
+      TERRACOTTA: 40
+      QUARTZ_BLOCK: 120
+      OBSIDIAN: 400
+      GLOWSTONE: 160
+      WHITE_WOOL: 40
+      NETHERRACK: 4
+      END_STONE: 30
+      DEEPSLATE: 12
+      BLACKSTONE: 12
+      PINK_CONCRETE: 30
+      WHITE_CONCRETE: 30
+  ores:
+    name: "&bOres & Minerals"
+    icon: DIAMOND
+    items:
+      COAL: 25
+      IRON_INGOT: 80
+      GOLD_INGOT: 120
+      COPPER_INGOT: 30
+      DIAMOND: 500
+      EMERALD: 350
+      LAPIS_LAZULI: 20
+      REDSTONE: 20
+      QUARTZ: 40
+      AMETHYST_SHARD: 60
+      NETHERITE_SCRAP: 2500
+      NETHERITE_INGOT: 12000
+      IRON_BLOCK: 720
+      GOLD_BLOCK: 1080
+      DIAMOND_BLOCK: 4500
+      EMERALD_BLOCK: 3150
+      COAL_BLOCK: 225
+      REDSTONE_BLOCK: 180
+      LAPIS_BLOCK: 180
+  farming:
+    name: "&aFarming"
+    icon: WHEAT
+    items:
+      WHEAT: 6
+      WHEAT_SEEDS: 4
+      CARROT: 8
+      POTATO: 8
+      BEETROOT: 8
+      MELON_SLICE: 4
+      PUMPKIN: 20
+      SUGAR_CANE: 6
+      BAMBOO: 4
+      COCOA_BEANS: 10
+      NETHER_WART: 20
+      CACTUS: 8
+      KELP: 4
+      SWEET_BERRIES: 8
+      HAY_BLOCK: 60
+      BONE_MEAL: 12
+  food:
+    name: "&6Food"
+    icon: COOKED_BEEF
+    items:
+      COOKED_BEEF: 40
+      COOKED_PORKCHOP: 40
+      COOKED_CHICKEN: 30
+      COOKED_SALMON: 30
+      BREAD: 20
+      GOLDEN_CARROT: 60
+      GOLDEN_APPLE: 700
+      COOKIE: 8
+      PUMPKIN_PIE: 40
+      CAKE: 120
+  drops:
+    name: "&cMob Drops"
+    icon: ENDER_PEARL
+    items:
+      BONE: 6
+      STRING: 10
+      GUNPOWDER: 20
+      SPIDER_EYE: 10
+      ENDER_PEARL: 150
+      BLAZE_ROD: 120
+      SLIME_BALL: 30
+      GHAST_TEAR: 400
+      PHANTOM_MEMBRANE: 80
+      SHULKER_SHELL: 800
+      LEATHER: 15
+      FEATHER: 6
+      ARROW: 4
+      INK_SAC: 10
+      PRISMARINE_SHARD: 25
+      NAUTILUS_SHELL: 200
+  redstone:
+    name: "&4Redstone & Utility"
+    icon: REDSTONE
+    items:
+      PISTON: 120
+      STICKY_PISTON: 200
+      OBSERVER: 100
+      HOPPER: 150
+      DISPENSER: 100
+      REPEATER: 60
+      COMPARATOR: 100
+      TNT: 300
+      SLIME_BLOCK: 270
+      LEVER: 6
+      REDSTONE_LAMP: 80
+      ENDER_CHEST: 600
+      ANVIL: 800
+      ENCHANTING_TABLE: 1500
+      EXPERIENCE_BOTTLE: 50
+      SHIELD: 200
+      BOW: 150
+      CROSSBOW: 250

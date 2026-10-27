@@ -1,0 +1,280 @@
+# ╔══════════════════════════════════════════════════╗
+# ║   FrostingCore  -  Frosting SMP                   ║
+# ║   Server by PixelForge.gg                         ║
+# ╚══════════════════════════════════════════════════╝
+# Colour codes use & (and &#RRGGBB for hex).
+
+prefix: "&8[&d&lFrosting&b&lSMP&8] &7"
+
+# The address shown on the scoreboard and tab list (change it if you get a custom domain).
+server-address: "dayglow.pixelforge.gg"
+
+discord:
+  link: "https://discord.gg/vPeQfEmyh"
+
+# Switch whole systems off here (do this if another plugin already provides the same commands).
+modules:
+  stats: true        # /bal /pay /baltop /top /stats /shards + kill rewards
+  spawn: true        # /spawn /setspawn + spawn protection
+  rtp: true
+  homes: true
+  tpa: true
+  combat: true       # combat timer
+  scoreboard: true
+  afk: true          # AFK zone: shards + keys
+  sell: true
+  auction: true
+  welcome: true      # join/quit messages + welcome title
+  daily: true
+  hub: true          # /fc hub ... (spawn builder + hologram leaderboards)
+  guard: true        # FrostGuard anti-cheat
+  shop: true         # the shop players asked to get back
+  crates: true       # crates + keys + keyall (also asked to get back)
+  shardshop: true    # shards shop (also asked to get back)
+  bounty: true
+  orders: true
+  lottery: true
+  airdrop: true
+  utility: true      # /nv /hidechat /discord
+  tab: true          # tab list header / footer / rank prefixes (replaces DonutTab)
+
+economy:
+  starting-money: 1000
+  min-pay: 1
+
+shards:
+  per-kill: 15
+
+teleport:
+  countdown: 3         # seconds standing still before any teleport
+
+spawn:
+  protection-radius: 40    # no building, no PvP, no damage at all inside this radius around /setspawn
+  invulnerable: true
+  respawn-at-spawn: true
+
+rtp:
+  cooldown: 30
+  show-coordinates: true
+  worlds:
+    world:
+      name: "&aOverworld"
+      icon: GRASS_BLOCK
+      min: 500
+      max: 10000
+    world_nether:
+      name: "&cNether"
+      icon: NETHERRACK
+      min: 200
+      max: 3000
+    world_the_end:
+      name: "&5The End"
+      icon: END_STONE
+      min: 200
+      max: 3000
+
+homes:
+  default: 3            # extra homes come from permissions like frostingcore.homes.5
+
+tpa:
+  expire-seconds: 60
+
+combat:
+  duration: 20
+  kill-on-logout: true
+  blocked-commands: [spawn, rtp, home, homes, tpa, tpahere, tpaccept, ah, auction, sell, shop, orders, afk, back, warp, warps, tp, ec, enderchest, crates, shardshop]
+
+auction:
+  duration-hours: 48
+  max-listings: 10
+  tax-percent: 0
+  min-price: 1
+  max-price: 1000000000000
+  max-item-bytes: 20000        # crash protection: bigger items can't be listed
+  blacklist: [BEDROCK, BARRIER, COMMAND_BLOCK, CHAIN_COMMAND_BLOCK, REPEATING_COMMAND_BLOCK, STRUCTURE_BLOCK, JIGSAW, SPAWNER]
+
+afk:
+  interval: 60          # seconds in the zone per shard payout
+  shards: 5
+  radius: 15
+  key-interval: 600     # seconds in the zone per crate key (0 = off)
+  key-crate: common
+
+sell:
+  multiplier: 1.0
+
+shop:
+  price-multiplier: 1.0
+
+daily:
+  money-base: 500
+  money-step: 250       # extra per streak day (up to 30 days)
+  shards-base: 5
+  weekly-bonus: 5000    # every 7th day
+  weekly-key: prime     # crate key given every 7th day ("" = none)
+
+lottery:
+  ticket-price: 1000
+  interval-minutes: 60
+  max-tickets-per-player: 50
+  tax-percent: 10
+  min-players: 2
+  seed: 0
+
+airdrop:
+  world: world
+  interval-minutes: 30
+  warn-seconds: 60
+  despawn-minutes: 5
+  min-distance: 500
+  max-distance: 4000
+  rolls: 8
+  # item : amount range : weight
+  loot:
+    - "DIAMOND:2-6:10"
+    - "GOLDEN_APPLE:2-4:10"
+    - "ENDER_PEARL:4-8:10"
+    - "COOKED_BEEF:16-32:12"
+    - "IRON_BLOCK:2-5:8"
+    - "NETHERITE_SCRAP:1-2:3"
+    - "EXPERIENCE_BOTTLE:16-32:8"
+    - "TOTEM_OF_UNDYING:1-1:2"
+    - "OBSIDIAN:8-16:8"
+
+keyall:
+  enabled: true
+  interval-minutes: 60
+  crate: common
+  amount: 1
+
+bounty:
+  min: 1000
+
+orders:
+  max-amount: 20000
+  min-price-each: 0.1
+  max-per-player: 5
+
+effects:
+  kill-effects: true    # lightning + firework on kills, custom death message
+
+# ---------------------------------------------------------------- crates
+# reward lines:  weight | type | argument | display name
+#   types: money, shards, item (MATERIAL:amount), key (crate:amount), cmd (console command, %player%)
+crates:
+  broadcast-weight: 5   # rewards this rare (or rarer) are announced to the whole server
+  common:
+    name: "&fCommon Crate"
+    icon: CHEST
+    rewards:
+      - "40|money|2500|&a$2,500"
+      - "25|shards|25|&b25 Shards"
+      - "15|item|IRON_INGOT:16|&f16x Iron Ingot"
+      - "10|item|COOKED_BEEF:32|&632x Steak"
+      - "6|item|DIAMOND:3|&b3x Diamond"
+      - "3|key|prime:1|&dPrime Crate Key"
+      - "1|money|50k|&d&l$50,000 JACKPOT"
+  prime:
+    name: "&dPrime Crate"
+    icon: ENDER_CHEST
+    rewards:
+      - "35|money|10k|&a$10,000"
+      - "25|shards|100|&b100 Shards"
+      - "15|item|DIAMOND:8|&b8x Diamond"
+      - "10|item|GOLDEN_APPLE:6|&66x Golden Apple"
+      - "8|item|NETHERITE_SCRAP:2|&82x Netherite Scrap"
+      - "4|key|frosted:1|&b&lFrosted Crate Key"
+      - "2|money|250k|&d&l$250,000 JACKPOT"
+  frosted:
+    name: "&b&lFrosted Crate"
+    icon: BARREL
+    rewards:
+      - "30|money|50k|&a$50,000"
+      - "25|shards|400|&b400 Shards"
+      - "20|item|NETHERITE_INGOT:2|&82x Netherite Ingot"
+      - "10|item|TOTEM_OF_UNDYING:2|&62x Totem of Undying"
+      - "8|item|ENCHANTED_GOLDEN_APPLE:2|&d2x Enchanted Golden Apple"
+      - "5|item|ELYTRA:1|&5&lElytra"
+      - "2|money|1m|&d&l$1,000,000 JACKPOT"
+
+# cost | type | argument | display name | icon      (types: key, money, item, cmd)
+shardshop:
+  items:
+    - "100|key|common:1|&fCommon Crate Key|TRIPWIRE_HOOK"
+    - "400|key|prime:1|&dPrime Crate Key|TRIPWIRE_HOOK"
+    - "1500|key|frosted:1|&b&lFrosted Crate Key|TRIPWIRE_HOOK"
+    - "50|money|10k|&a$10,000|GOLD_INGOT"
+    - "200|money|50k|&a$50,000|GOLD_BLOCK"
+    - "150|item|EXPERIENCE_BOTTLE:32|&a32x Bottle o' Enchanting|EXPERIENCE_BOTTLE"
+    - "300|item|ENDER_CHEST:1|&5Ender Chest|ENDER_CHEST"
+    - "250|item|SHULKER_SHELL:2|&d2x Shulker Shell|SHULKER_SHELL"
+
+scoreboard:
+  title: "&d&lFROSTING &b&lSMP"
+  lines:
+    - "&8&m                      "
+    - "&d$ &fMoney: &a%money%"
+    - "&b✦ &fShards: &b%shards%"
+    - "&c⚔ &fKills: &c%kills%"
+    - "&7☠ &fDeaths: &7%deaths%"
+    - "&e⌚ &fPlaytime: &e%playtime%"
+    - " "
+    - "&7Ping: &f%ping%ms &8| &7Online: &f%online%"
+    - "&8&m                      "
+    - "&b%address%"
+
+# ---------------------------------------------------------------- tab list
+# Ranks are permission nodes (give them with LuckPerms, e.g.  lp user Name permission set frostingcore.rank.vip true).
+# The first rank a player has wins, so keep the highest rank at the top.
+tab:
+  update-ticks: 40
+  name-format: "%prefix%%player%"
+  default-prefix: "&7"
+  ranks:
+    - "frostingcore.rank.owner|&4&lOWNER &c"
+    - "frostingcore.rank.admin|&c&lADMIN &c"
+    - "frostingcore.rank.mod|&9&lMOD &9"
+    - "frostingcore.rank.helper|&a&lHELPER &a"
+    - "frostingcore.rank.vip|&d&lVIP &d"
+  header:
+    - ""
+    - "&b&l❄ &d&lFROSTING &b&lSMP &b&l❄"
+    - "&7%address%"
+    - ""
+  footer:
+    - ""
+    - "&7Online: &f%online%&7/&f%max%  &8|  &7Ping: &f%ping%ms  &8|  &7TPS: &f%tps%"
+    - "&dMoney: &a%money%  &8|  &dShards: &b%shards%"
+    - "&7Discord: &b/discord"
+    - ""
+
+# ---------------------------------------------------------------- anti-cheat
+guard:
+  enabled: true
+  alert-vl: 6.0              # staff are alerted + proof is saved at this violation level
+  ban-vl: 25.0               # in AUTO mode: punish at this level (and several checks must agree)
+  decay-per-second: 0.15     # violation levels fade, so one-off lag spikes disappear
+  min-tps: 18.0              # movement/combat checks pause when the server lags
+  max-ping: 600
+  discord-webhook: ""        # paste a Discord webhook URL to get every case posted with its proof
+  punish:
+    mode: ALERT              # ALERT = only warn staff (start here!)   AUTO = punish by itself
+    required-checks: 2       # how many DIFFERENT checks must agree before an automatic punishment
+    window-seconds: 300
+    commands:
+      - "kick %player% [FrostGuard] Unfair advantage detected (case #%id%, %check%)"
+      # - "ban %player% [FrostGuard] %check% (case #%id%)"
+  checks:                    # switch single checks off if one ever gives you false flags
+    fly: true
+    groundspoof: true
+    speed: true
+    step: true
+    timer: true
+    reach: true
+    aim: true
+    hitwall: true
+    killaura: true
+    autoclicker: true
+    fastbreak: true
+    nuker: true
+    fastplace: true
