@@ -24,17 +24,16 @@ jobs:
           distribution: temurin
           java-version: '21'
           cache: maven
-          server-id: ossrh
 
       - name: Build with Maven
         run: mvn -B -ntp clean package
-        working-directory: ./your-subfolder-name   # <-- REPLACE with the folder containing your pom.xml (e.g., ./FrostingCore)
+        working-directory: ./FrostingCore-source/FrostingCore
 
       - name: Upload jar artifact
         uses: actions/upload-artifact@v4
         with:
           name: FrostingCore
-          path: your-subfolder-name/target/FrostingCore-*.jar   # <-- Include the subfolder here too
+          path: FrostingCore-source/FrostingCore/target/FrostingCore-*.jar
           if-no-files-found: error
 
   release:
