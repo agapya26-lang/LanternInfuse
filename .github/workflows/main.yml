@@ -13,8 +13,10 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
       - name: Set up JDK 21
         uses: actions/setup-java@v4
@@ -22,20 +24,34 @@ jobs:
           distribution: temurin
           java-version: '21'
           cache: maven
+          server-id: ossrh
 
       - name: Build with Maven
         run: mvn -B -ntp clean package
+        working-directory: ./your-subfolder-name   # <-- REPLACE with the folder containing your pom.xml (e.g., ./FrostingCore)
 
       - name: Upload jar artifact
         uses: actions/upload-artifact@v4
         with:
           name: FrostingCore
-          path: target/FrostingCore-*.jar
+          path: your-subfolder-name/target/FrostingCore-*.jar   # <-- Include the subfolder here too
           if-no-files-found: error
 
+  release:
+    needs: build
+    if: startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Download all workflow runs
+        uses: actions/download-artifact@v4
+        with:
+          name: FrostingCore
+          path: ./released-jar
+
       - name: Create release
-        if: startsWith(github.ref, 'refs/tags/v')
         uses: softprops/action-gh-release@v2
         with:
-          files: target/FrostingCore-*.jar
+          files: ./released-jar/FrostingCore-*.jar
           generate_release_notes: true
